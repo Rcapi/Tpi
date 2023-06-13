@@ -1,0 +1,12 @@
+C:\Users\54346\source\repos\TPI\bin\Debug\net6.0\TPI.deps.json
+C:\Users\54346\source\repos\TPI\bin\Debug\net6.0\TPI.dll
+C:\Users\54346\source\repos\TPI\bin\Debug\net6.0\TPI.pdb
+C:\Users\54346\source\repos\TPI\obj\Debug\net6.0\TPI.csproj.AssemblyReference.cache
+C:\Users\54346\source\repos\TPI\obj\Debug\net6.0\TPI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\54346\source\repos\TPI\obj\Debug\net6.0\TPI.AssemblyInfoInputs.cache
+C:\Users\54346\source\repos\TPI\obj\Debug\net6.0\TPI.AssemblyInfo.cs
+C:\Users\54346\source\repos\TPI\obj\Debug\net6.0\TPI.csproj.CoreCompileInputs.cache
+C:\Users\54346\source\repos\TPI\obj\Debug\net6.0\TPI.dll
+C:\Users\54346\source\repos\TPI\obj\Debug\net6.0\refint\TPI.dll
+C:\Users\54346\source\repos\TPI\obj\Debug\net6.0\TPI.pdb
+C:\Users\54346\source\repos\TPI\obj\Debug\net6.0\ref\TPI.dll
