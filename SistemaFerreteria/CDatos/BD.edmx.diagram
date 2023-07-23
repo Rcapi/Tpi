@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b3ee05f2629f4b988e0af2ea9ff64bb9" Name="Diagram1">
+        <EntityTypeShape EntityType="FerreteriaModel.Administrador" Width="1.5" PointX="10" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FerreteriaModel.Cliente" Width="1.5" PointX="10" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FerreteriaModel.ElementoDeSujecion" Width="1.5" PointX="3" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FerreteriaModel.Empleado" Width="1.5" PointX="10" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FerreteriaModel.EquipoDeSeguridad" Width="1.5" PointX="3" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FerreteriaModel.Herramienta" Width="1.5" PointX="3" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FerreteriaModel.HerramientaElectrica" Width="1.5" PointX="5.25" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FerreteriaModel.HerramientaManual" Width="1.5" PointX="5.25" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FerreteriaModel.MaterialDeConstruccion" Width="1.5" PointX="3" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FerreteriaModel.Producto" Width="1.5" PointX="0.75" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FerreteriaModel.Proveedor" Width="1.5" PointX="7.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FerreteriaModel.Usuario" Width="1.5" PointX="7.75" PointY="2.75" IsExpanded="true" />
+        <AssociationConnector Association="FerreteriaModel.FK__Administrad__Dni__4E88ABD4" ManuallyRouted="false" />
+        <AssociationConnector Association="FerreteriaModel.FK__Cliente__Dni__4BAC3F29" ManuallyRouted="false" />
+        <AssociationConnector Association="FerreteriaModel.FK__ElementoD__Codig__5DCAEF64" ManuallyRouted="false" />
+        <AssociationConnector Association="FerreteriaModel.FK__Empleado__Dni__5165187F" ManuallyRouted="false" />
+        <AssociationConnector Association="FerreteriaModel.FK__EquipoDeS__Codig__5AEE82B9" ManuallyRouted="false" />
+        <AssociationConnector Association="FerreteriaModel.FK__Herramien__Codig__5812160E" ManuallyRouted="false" />
+        <AssociationConnector Association="FerreteriaModel.FK__HerramientaElect__66603565" ManuallyRouted="false" />
+        <AssociationConnector Association="FerreteriaModel.FK__HerramientaManua__6383C8BA" ManuallyRouted="false" />
+        <AssociationConnector Association="FerreteriaModel.FK__MaterialD__Codig__60A75C0F" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,728 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="FerreteriaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Administrador">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Dni" Type="varchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="NroCli" />
+          </Key>
+          <Property Name="NroCli" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Dni" Type="varchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ElementoDeSujecion">
+          <Key>
+            <PropertyRef Name="TipoElemento" />
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="TipoElemento" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Codigo" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Longitud" Type="float" />
+          <Property Name="Capacidad" Type="float" />
+        </EntityType>
+        <EntityType Name="Empleado">
+          <Key>
+            <PropertyRef Name="Legajo" />
+          </Key>
+          <Property Name="Legajo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Dni" Type="varchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EquipoDeSeguridad">
+          <Key>
+            <PropertyRef Name="Talle" />
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="Talle" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="Codigo" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Peso" Type="float" />
+          <Property Name="TipoEquipo" Type="varchar" MaxLength="50" />
+          <Property Name="Normativa" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Herramienta">
+          <Key>
+            <PropertyRef Name="Modelo" />
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="Modelo" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Codigo" Type="varchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="HerramientaElectrica">
+          <Key>
+            <PropertyRef Name="Potencia" />
+            <PropertyRef Name="Modelo" />
+          </Key>
+          <Property Name="Potencia" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Modelo" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Codigo" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="HerramientaManual">
+          <Key>
+            <PropertyRef Name="Tipo" />
+            <PropertyRef Name="Modelo" />
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="Tipo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Modelo" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Codigo" Type="varchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MaterialDeConstruccion">
+          <Key>
+            <PropertyRef Name="Marca" />
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="Marca" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Codigo" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Medidas" Type="varchar" MaxLength="15" />
+          <Property Name="TipoMaterial" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="Producto">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="Codigo" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="255" />
+          <Property Name="Precio" Type="float" />
+          <Property Name="Stock" Type="int" />
+        </EntityType>
+        <EntityType Name="Proveedor">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="100" />
+          <Property Name="Telefono" Type="varchar" MaxLength="20" />
+          <Property Name="Direccion" Type="varchar" MaxLength="100" />
+          <Property Name="Ciudad" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="Dni" />
+          </Key>
+          <Property Name="Dni" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Clave" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Apellido" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="100" />
+          <Property Name="Telefono" Type="varchar" MaxLength="20" />
+          <Property Name="Direccion" Type="varchar" MaxLength="100" />
+          <Property Name="Ciudad" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK__Administrad__Dni__4E88ABD4">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="Administrador" Type="Self.Administrador" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="Dni" />
+            </Principal>
+            <Dependent Role="Administrador">
+              <PropertyRef Name="Dni" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Cliente__Dni__4BAC3F29">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="Dni" />
+            </Principal>
+            <Dependent Role="Cliente">
+              <PropertyRef Name="Dni" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ElementoD__Codig__5DCAEF64">
+          <End Role="Producto" Type="Self.Producto" Multiplicity="1" />
+          <End Role="ElementoDeSujecion" Type="Self.ElementoDeSujecion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Producto">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="ElementoDeSujecion">
+              <PropertyRef Name="Codigo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Empleado__Dni__5165187F">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="Dni" />
+            </Principal>
+            <Dependent Role="Empleado">
+              <PropertyRef Name="Dni" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EquipoDeS__Codig__5AEE82B9">
+          <End Role="Producto" Type="Self.Producto" Multiplicity="1" />
+          <End Role="EquipoDeSeguridad" Type="Self.EquipoDeSeguridad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Producto">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="EquipoDeSeguridad">
+              <PropertyRef Name="Codigo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Herramien__Codig__5812160E">
+          <End Role="Producto" Type="Self.Producto" Multiplicity="1" />
+          <End Role="Herramienta" Type="Self.Herramienta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Producto">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="Herramienta">
+              <PropertyRef Name="Codigo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__HerramientaElect__66603565">
+          <End Role="Herramienta" Type="Self.Herramienta" Multiplicity="0..1" />
+          <End Role="HerramientaElectrica" Type="Self.HerramientaElectrica" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Herramienta">
+              <PropertyRef Name="Modelo" />
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="HerramientaElectrica">
+              <PropertyRef Name="Modelo" />
+              <PropertyRef Name="Codigo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__HerramientaManua__6383C8BA">
+          <End Role="Herramienta" Type="Self.Herramienta" Multiplicity="1" />
+          <End Role="HerramientaManual" Type="Self.HerramientaManual" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Herramienta">
+              <PropertyRef Name="Modelo" />
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="HerramientaManual">
+              <PropertyRef Name="Modelo" />
+              <PropertyRef Name="Codigo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MaterialD__Codig__60A75C0F">
+          <End Role="Producto" Type="Self.Producto" Multiplicity="1" />
+          <End Role="MaterialDeConstruccion" Type="Self.MaterialDeConstruccion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Producto">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="MaterialDeConstruccion">
+              <PropertyRef Name="Codigo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="FerreteriaModelStoreContainer">
+          <EntitySet Name="Administrador" EntityType="Self.Administrador" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cliente" EntityType="Self.Cliente" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ElementoDeSujecion" EntityType="Self.ElementoDeSujecion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Empleado" EntityType="Self.Empleado" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EquipoDeSeguridad" EntityType="Self.EquipoDeSeguridad" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Herramienta" EntityType="Self.Herramienta" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HerramientaElectrica" EntityType="Self.HerramientaElectrica" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HerramientaManual" EntityType="Self.HerramientaManual" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MaterialDeConstruccion" EntityType="Self.MaterialDeConstruccion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Producto" EntityType="Self.Producto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Proveedor" EntityType="Self.Proveedor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Administrad__Dni__4E88ABD4" Association="Self.FK__Administrad__Dni__4E88ABD4">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Administrador" EntitySet="Administrador" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Cliente__Dni__4BAC3F29" Association="Self.FK__Cliente__Dni__4BAC3F29">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Cliente" EntitySet="Cliente" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ElementoD__Codig__5DCAEF64" Association="Self.FK__ElementoD__Codig__5DCAEF64">
+            <End Role="Producto" EntitySet="Producto" />
+            <End Role="ElementoDeSujecion" EntitySet="ElementoDeSujecion" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Empleado__Dni__5165187F" Association="Self.FK__Empleado__Dni__5165187F">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Empleado" EntitySet="Empleado" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EquipoDeS__Codig__5AEE82B9" Association="Self.FK__EquipoDeS__Codig__5AEE82B9">
+            <End Role="Producto" EntitySet="Producto" />
+            <End Role="EquipoDeSeguridad" EntitySet="EquipoDeSeguridad" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Herramien__Codig__5812160E" Association="Self.FK__Herramien__Codig__5812160E">
+            <End Role="Producto" EntitySet="Producto" />
+            <End Role="Herramienta" EntitySet="Herramienta" />
+          </AssociationSet>
+          <AssociationSet Name="FK__HerramientaElect__66603565" Association="Self.FK__HerramientaElect__66603565">
+            <End Role="Herramienta" EntitySet="Herramienta" />
+            <End Role="HerramientaElectrica" EntitySet="HerramientaElectrica" />
+          </AssociationSet>
+          <AssociationSet Name="FK__HerramientaManua__6383C8BA" Association="Self.FK__HerramientaManua__6383C8BA">
+            <End Role="Herramienta" EntitySet="Herramienta" />
+            <End Role="HerramientaManual" EntitySet="HerramientaManual" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MaterialD__Codig__60A75C0F" Association="Self.FK__MaterialD__Codig__60A75C0F">
+            <End Role="Producto" EntitySet="Producto" />
+            <End Role="MaterialDeConstruccion" EntitySet="MaterialDeConstruccion" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FerreteriaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Administrador">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Dni" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Usuario" Relationship="Self.FK__Administrad__Dni__4E88ABD4" FromRole="Administrador" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="NroCli" />
+          </Key>
+          <Property Name="NroCli" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Dni" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Usuario" Relationship="Self.FK__Cliente__Dni__4BAC3F29" FromRole="Cliente" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="ElementoDeSujecion">
+          <Key>
+            <PropertyRef Name="TipoElemento" />
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="TipoElemento" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Codigo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Longitud" Type="Double" />
+          <Property Name="Capacidad" Type="Double" />
+          <NavigationProperty Name="Producto" Relationship="Self.FK__ElementoD__Codig__5DCAEF64" FromRole="ElementoDeSujecion" ToRole="Producto" />
+        </EntityType>
+        <EntityType Name="Empleado">
+          <Key>
+            <PropertyRef Name="Legajo" />
+          </Key>
+          <Property Name="Legajo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Dni" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Usuario" Relationship="Self.FK__Empleado__Dni__5165187F" FromRole="Empleado" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="EquipoDeSeguridad">
+          <Key>
+            <PropertyRef Name="Talle" />
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="Talle" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Codigo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Peso" Type="Double" />
+          <Property Name="TipoEquipo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Normativa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Producto" Relationship="Self.FK__EquipoDeS__Codig__5AEE82B9" FromRole="EquipoDeSeguridad" ToRole="Producto" />
+        </EntityType>
+        <EntityType Name="Herramienta">
+          <Key>
+            <PropertyRef Name="Modelo" />
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="Modelo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Codigo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Producto" Relationship="Self.FK__Herramien__Codig__5812160E" FromRole="Herramienta" ToRole="Producto" />
+          <NavigationProperty Name="HerramientaElectricas" Relationship="Self.FK__HerramientaElect__66603565" FromRole="Herramienta" ToRole="HerramientaElectrica" />
+          <NavigationProperty Name="HerramientaManuals" Relationship="Self.FK__HerramientaManua__6383C8BA" FromRole="Herramienta" ToRole="HerramientaManual" />
+        </EntityType>
+        <EntityType Name="HerramientaElectrica">
+          <Key>
+            <PropertyRef Name="Potencia" />
+            <PropertyRef Name="Modelo" />
+          </Key>
+          <Property Name="Potencia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Modelo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Codigo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Herramienta" Relationship="Self.FK__HerramientaElect__66603565" FromRole="HerramientaElectrica" ToRole="Herramienta" />
+        </EntityType>
+        <EntityType Name="HerramientaManual">
+          <Key>
+            <PropertyRef Name="Tipo" />
+            <PropertyRef Name="Modelo" />
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="Tipo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Modelo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Codigo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Herramienta" Relationship="Self.FK__HerramientaManua__6383C8BA" FromRole="HerramientaManual" ToRole="Herramienta" />
+        </EntityType>
+        <EntityType Name="MaterialDeConstruccion">
+          <Key>
+            <PropertyRef Name="Marca" />
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="Marca" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Codigo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Medidas" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="TipoMaterial" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Producto" Relationship="Self.FK__MaterialD__Codig__60A75C0F" FromRole="MaterialDeConstruccion" ToRole="Producto" />
+        </EntityType>
+        <EntityType Name="Producto">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="Codigo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Precio" Type="Double" />
+          <Property Name="Stock" Type="Int32" />
+          <NavigationProperty Name="ElementoDeSujecions" Relationship="Self.FK__ElementoD__Codig__5DCAEF64" FromRole="Producto" ToRole="ElementoDeSujecion" />
+          <NavigationProperty Name="EquipoDeSeguridads" Relationship="Self.FK__EquipoDeS__Codig__5AEE82B9" FromRole="Producto" ToRole="EquipoDeSeguridad" />
+          <NavigationProperty Name="Herramientas" Relationship="Self.FK__Herramien__Codig__5812160E" FromRole="Producto" ToRole="Herramienta" />
+          <NavigationProperty Name="MaterialDeConstruccions" Relationship="Self.FK__MaterialD__Codig__60A75C0F" FromRole="Producto" ToRole="MaterialDeConstruccion" />
+        </EntityType>
+        <EntityType Name="Proveedor">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Telefono" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Direccion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Ciudad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="Dni" />
+          </Key>
+          <Property Name="Dni" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Clave" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Apellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Telefono" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Direccion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Ciudad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Administradors" Relationship="Self.FK__Administrad__Dni__4E88ABD4" FromRole="Usuario" ToRole="Administrador" />
+          <NavigationProperty Name="Clientes" Relationship="Self.FK__Cliente__Dni__4BAC3F29" FromRole="Usuario" ToRole="Cliente" />
+          <NavigationProperty Name="Empleadoes" Relationship="Self.FK__Empleado__Dni__5165187F" FromRole="Usuario" ToRole="Empleado" />
+        </EntityType>
+        <Association Name="FK__Administrad__Dni__4E88ABD4">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="Administrador" Type="Self.Administrador" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="Dni" />
+            </Principal>
+            <Dependent Role="Administrador">
+              <PropertyRef Name="Dni" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Cliente__Dni__4BAC3F29">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="Dni" />
+            </Principal>
+            <Dependent Role="Cliente">
+              <PropertyRef Name="Dni" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ElementoD__Codig__5DCAEF64">
+          <End Role="Producto" Type="Self.Producto" Multiplicity="1" />
+          <End Role="ElementoDeSujecion" Type="Self.ElementoDeSujecion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Producto">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="ElementoDeSujecion">
+              <PropertyRef Name="Codigo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Empleado__Dni__5165187F">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="Dni" />
+            </Principal>
+            <Dependent Role="Empleado">
+              <PropertyRef Name="Dni" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EquipoDeS__Codig__5AEE82B9">
+          <End Role="Producto" Type="Self.Producto" Multiplicity="1" />
+          <End Role="EquipoDeSeguridad" Type="Self.EquipoDeSeguridad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Producto">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="EquipoDeSeguridad">
+              <PropertyRef Name="Codigo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Herramien__Codig__5812160E">
+          <End Role="Producto" Type="Self.Producto" Multiplicity="1" />
+          <End Role="Herramienta" Type="Self.Herramienta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Producto">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="Herramienta">
+              <PropertyRef Name="Codigo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__HerramientaElect__66603565">
+          <End Role="Herramienta" Type="Self.Herramienta" Multiplicity="0..1" />
+          <End Role="HerramientaElectrica" Type="Self.HerramientaElectrica" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Herramienta">
+              <PropertyRef Name="Modelo" />
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="HerramientaElectrica">
+              <PropertyRef Name="Modelo" />
+              <PropertyRef Name="Codigo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__HerramientaManua__6383C8BA">
+          <End Role="Herramienta" Type="Self.Herramienta" Multiplicity="1" />
+          <End Role="HerramientaManual" Type="Self.HerramientaManual" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Herramienta">
+              <PropertyRef Name="Modelo" />
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="HerramientaManual">
+              <PropertyRef Name="Modelo" />
+              <PropertyRef Name="Codigo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MaterialD__Codig__60A75C0F">
+          <End Role="Producto" Type="Self.Producto" Multiplicity="1" />
+          <End Role="MaterialDeConstruccion" Type="Self.MaterialDeConstruccion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Producto">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="MaterialDeConstruccion">
+              <PropertyRef Name="Codigo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="FerreteriaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Administradors" EntityType="Self.Administrador" />
+          <EntitySet Name="Clientes" EntityType="Self.Cliente" />
+          <EntitySet Name="ElementoDeSujecions" EntityType="Self.ElementoDeSujecion" />
+          <EntitySet Name="Empleadoes" EntityType="Self.Empleado" />
+          <EntitySet Name="EquipoDeSeguridads" EntityType="Self.EquipoDeSeguridad" />
+          <EntitySet Name="Herramientas" EntityType="Self.Herramienta" />
+          <EntitySet Name="HerramientaElectricas" EntityType="Self.HerramientaElectrica" />
+          <EntitySet Name="HerramientaManuals" EntityType="Self.HerramientaManual" />
+          <EntitySet Name="MaterialDeConstruccions" EntityType="Self.MaterialDeConstruccion" />
+          <EntitySet Name="Productoes" EntityType="Self.Producto" />
+          <EntitySet Name="Proveedors" EntityType="Self.Proveedor" />
+          <EntitySet Name="Usuarios" EntityType="Self.Usuario" />
+          <AssociationSet Name="FK__Administrad__Dni__4E88ABD4" Association="Self.FK__Administrad__Dni__4E88ABD4">
+            <End Role="Usuario" EntitySet="Usuarios" />
+            <End Role="Administrador" EntitySet="Administradors" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Cliente__Dni__4BAC3F29" Association="Self.FK__Cliente__Dni__4BAC3F29">
+            <End Role="Usuario" EntitySet="Usuarios" />
+            <End Role="Cliente" EntitySet="Clientes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ElementoD__Codig__5DCAEF64" Association="Self.FK__ElementoD__Codig__5DCAEF64">
+            <End Role="Producto" EntitySet="Productoes" />
+            <End Role="ElementoDeSujecion" EntitySet="ElementoDeSujecions" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Empleado__Dni__5165187F" Association="Self.FK__Empleado__Dni__5165187F">
+            <End Role="Usuario" EntitySet="Usuarios" />
+            <End Role="Empleado" EntitySet="Empleadoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EquipoDeS__Codig__5AEE82B9" Association="Self.FK__EquipoDeS__Codig__5AEE82B9">
+            <End Role="Producto" EntitySet="Productoes" />
+            <End Role="EquipoDeSeguridad" EntitySet="EquipoDeSeguridads" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Herramien__Codig__5812160E" Association="Self.FK__Herramien__Codig__5812160E">
+            <End Role="Producto" EntitySet="Productoes" />
+            <End Role="Herramienta" EntitySet="Herramientas" />
+          </AssociationSet>
+          <AssociationSet Name="FK__HerramientaElect__66603565" Association="Self.FK__HerramientaElect__66603565">
+            <End Role="Herramienta" EntitySet="Herramientas" />
+            <End Role="HerramientaElectrica" EntitySet="HerramientaElectricas" />
+          </AssociationSet>
+          <AssociationSet Name="FK__HerramientaManua__6383C8BA" Association="Self.FK__HerramientaManua__6383C8BA">
+            <End Role="Herramienta" EntitySet="Herramientas" />
+            <End Role="HerramientaManual" EntitySet="HerramientaManuals" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MaterialD__Codig__60A75C0F" Association="Self.FK__MaterialD__Codig__60A75C0F">
+            <End Role="Producto" EntitySet="Productoes" />
+            <End Role="MaterialDeConstruccion" EntitySet="MaterialDeConstruccions" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FerreteriaModelStoreContainer" CdmEntityContainer="FerreteriaEntities">
+          <EntitySetMapping Name="Administradors">
+            <EntityTypeMapping TypeName="FerreteriaModel.Administrador">
+              <MappingFragment StoreEntitySet="Administrador">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Dni" ColumnName="Dni" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Clientes">
+            <EntityTypeMapping TypeName="FerreteriaModel.Cliente">
+              <MappingFragment StoreEntitySet="Cliente">
+                <ScalarProperty Name="NroCli" ColumnName="NroCli" />
+                <ScalarProperty Name="Dni" ColumnName="Dni" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ElementoDeSujecions">
+            <EntityTypeMapping TypeName="FerreteriaModel.ElementoDeSujecion">
+              <MappingFragment StoreEntitySet="ElementoDeSujecion">
+                <ScalarProperty Name="TipoElemento" ColumnName="TipoElemento" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Longitud" ColumnName="Longitud" />
+                <ScalarProperty Name="Capacidad" ColumnName="Capacidad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Empleadoes">
+            <EntityTypeMapping TypeName="FerreteriaModel.Empleado">
+              <MappingFragment StoreEntitySet="Empleado">
+                <ScalarProperty Name="Legajo" ColumnName="Legajo" />
+                <ScalarProperty Name="Dni" ColumnName="Dni" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EquipoDeSeguridads">
+            <EntityTypeMapping TypeName="FerreteriaModel.EquipoDeSeguridad">
+              <MappingFragment StoreEntitySet="EquipoDeSeguridad">
+                <ScalarProperty Name="Talle" ColumnName="Talle" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Peso" ColumnName="Peso" />
+                <ScalarProperty Name="TipoEquipo" ColumnName="TipoEquipo" />
+                <ScalarProperty Name="Normativa" ColumnName="Normativa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Herramientas">
+            <EntityTypeMapping TypeName="FerreteriaModel.Herramienta">
+              <MappingFragment StoreEntitySet="Herramienta">
+                <ScalarProperty Name="Modelo" ColumnName="Modelo" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HerramientaElectricas">
+            <EntityTypeMapping TypeName="FerreteriaModel.HerramientaElectrica">
+              <MappingFragment StoreEntitySet="HerramientaElectrica">
+                <ScalarProperty Name="Potencia" ColumnName="Potencia" />
+                <ScalarProperty Name="Modelo" ColumnName="Modelo" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HerramientaManuals">
+            <EntityTypeMapping TypeName="FerreteriaModel.HerramientaManual">
+              <MappingFragment StoreEntitySet="HerramientaManual">
+                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+                <ScalarProperty Name="Modelo" ColumnName="Modelo" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MaterialDeConstruccions">
+            <EntityTypeMapping TypeName="FerreteriaModel.MaterialDeConstruccion">
+              <MappingFragment StoreEntitySet="MaterialDeConstruccion">
+                <ScalarProperty Name="Marca" ColumnName="Marca" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Medidas" ColumnName="Medidas" />
+                <ScalarProperty Name="TipoMaterial" ColumnName="TipoMaterial" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Productoes">
+            <EntityTypeMapping TypeName="FerreteriaModel.Producto">
+              <MappingFragment StoreEntitySet="Producto">
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Precio" ColumnName="Precio" />
+                <ScalarProperty Name="Stock" ColumnName="Stock" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Proveedors">
+            <EntityTypeMapping TypeName="FerreteriaModel.Proveedor">
+              <MappingFragment StoreEntitySet="Proveedor">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="Ciudad" ColumnName="Ciudad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuarios">
+            <EntityTypeMapping TypeName="FerreteriaModel.Usuario">
+              <MappingFragment StoreEntitySet="Usuario">
+                <ScalarProperty Name="Dni" ColumnName="Dni" />
+                <ScalarProperty Name="Clave" ColumnName="Clave" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="Ciudad" ColumnName="Ciudad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

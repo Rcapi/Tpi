@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FerreteriaModelStoreContainer" CdmEntityContainer="FerreteriaEntities">
+    <EntitySetMapping Name="Administradors">
+      <EntityTypeMapping TypeName="FerreteriaModel.Administrador">
+        <MappingFragment StoreEntitySet="Administrador">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Dni" ColumnName="Dni" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Clientes">
+      <EntityTypeMapping TypeName="FerreteriaModel.Cliente">
+        <MappingFragment StoreEntitySet="Cliente">
+          <ScalarProperty Name="NroCli" ColumnName="NroCli" />
+          <ScalarProperty Name="Dni" ColumnName="Dni" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ElementoDeSujecions">
+      <EntityTypeMapping TypeName="FerreteriaModel.ElementoDeSujecion">
+        <MappingFragment StoreEntitySet="ElementoDeSujecion">
+          <ScalarProperty Name="TipoElemento" ColumnName="TipoElemento" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Longitud" ColumnName="Longitud" />
+          <ScalarProperty Name="Capacidad" ColumnName="Capacidad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Empleadoes">
+      <EntityTypeMapping TypeName="FerreteriaModel.Empleado">
+        <MappingFragment StoreEntitySet="Empleado">
+          <ScalarProperty Name="Legajo" ColumnName="Legajo" />
+          <ScalarProperty Name="Dni" ColumnName="Dni" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EquipoDeSeguridads">
+      <EntityTypeMapping TypeName="FerreteriaModel.EquipoDeSeguridad">
+        <MappingFragment StoreEntitySet="EquipoDeSeguridad">
+          <ScalarProperty Name="Talle" ColumnName="Talle" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Peso" ColumnName="Peso" />
+          <ScalarProperty Name="TipoEquipo" ColumnName="TipoEquipo" />
+          <ScalarProperty Name="Normativa" ColumnName="Normativa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Herramientas">
+      <EntityTypeMapping TypeName="FerreteriaModel.Herramienta">
+        <MappingFragment StoreEntitySet="Herramienta">
+          <ScalarProperty Name="Modelo" ColumnName="Modelo" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HerramientaElectricas">
+      <EntityTypeMapping TypeName="FerreteriaModel.HerramientaElectrica">
+        <MappingFragment StoreEntitySet="HerramientaElectrica">
+          <ScalarProperty Name="Potencia" ColumnName="Potencia" />
+          <ScalarProperty Name="Modelo" ColumnName="Modelo" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HerramientaManuals">
+      <EntityTypeMapping TypeName="FerreteriaModel.HerramientaManual">
+        <MappingFragment StoreEntitySet="HerramientaManual">
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+          <ScalarProperty Name="Modelo" ColumnName="Modelo" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MaterialDeConstruccions">
+      <EntityTypeMapping TypeName="FerreteriaModel.MaterialDeConstruccion">
+        <MappingFragment StoreEntitySet="MaterialDeConstruccion">
+          <ScalarProperty Name="Marca" ColumnName="Marca" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Medidas" ColumnName="Medidas" />
+          <ScalarProperty Name="TipoMaterial" ColumnName="TipoMaterial" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Productoes">
+      <EntityTypeMapping TypeName="FerreteriaModel.Producto">
+        <MappingFragment StoreEntitySet="Producto">
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Precio" ColumnName="Precio" />
+          <ScalarProperty Name="Stock" ColumnName="Stock" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Proveedors">
+      <EntityTypeMapping TypeName="FerreteriaModel.Proveedor">
+        <MappingFragment StoreEntitySet="Proveedor">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Ciudad" ColumnName="Ciudad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuarios">
+      <EntityTypeMapping TypeName="FerreteriaModel.Usuario">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="Dni" ColumnName="Dni" />
+          <ScalarProperty Name="Clave" ColumnName="Clave" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Ciudad" ColumnName="Ciudad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
