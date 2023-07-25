@@ -30,5 +30,13 @@ namespace SistemaFerreteria.CPresentacion
             RegistroEmpleado registroEmpleado = new RegistroEmpleado();
             registroEmpleado.Show();
         }
+
+        private void btnAtras_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            formIngreso formIngreso = new formIngreso();
+            formIngreso.Show();
+            this.Close();
+        }
     }
 }

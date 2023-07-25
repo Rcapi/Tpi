@@ -20,3 +20,5 @@ C:\Users\matia\source\repos\SistemaFerreteria\SistemaFerreteria\bin\Debug\Entity
 C:\Users\matia\source\repos\SistemaFerreteria\SistemaFerreteria\obj\Debug\SistemaFerreteria.formIngreso.resources
 C:\Users\matia\source\repos\SistemaFerreteria\SistemaFerreteria\obj\Debug\SistemaFerreteria.CPresentacion.formMainCliente.resources
 C:\Users\matia\source\repos\SistemaFerreteria\SistemaFerreteria\obj\Debug\SistemaFerreteria.CPresentacion.RegistroCliente.resources
+C:\Users\matia\source\repos\SistemaFerreteria\SistemaFerreteria\obj\Debug\SistemaFerreteria.CPresentacion.formMainEmpleado.resources
+C:\Users\matia\source\repos\SistemaFerreteria\SistemaFerreteria\obj\Debug\SistemaFerreteria.CPresentacion.formMainAdmin.resources

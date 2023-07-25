@@ -41,15 +41,17 @@
             this.datosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saldoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.carritoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cerrarSesionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuProductos.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblBienvenido
             // 
             this.lblBienvenido.AutoSize = true;
+            this.lblBienvenido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBienvenido.Location = new System.Drawing.Point(90, 62);
             this.lblBienvenido.Name = "lblBienvenido";
-            this.lblBienvenido.Size = new System.Drawing.Size(75, 16);
+            this.lblBienvenido.Size = new System.Drawing.Size(109, 25);
             this.lblBienvenido.TabIndex = 0;
             this.lblBienvenido.Text = "Bienvenido";
             this.lblBienvenido.Click += new System.EventHandler(this.lblBienvenido_Click);
@@ -58,12 +60,12 @@
             // 
             this.menuProductos.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuProductos.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.productosToolStripMenuItem,
             this.cuentaToolStripMenuItem,
-            this.carritoToolStripMenuItem});
+            this.carritoToolStripMenuItem,
+            this.productosToolStripMenuItem});
             this.menuProductos.Location = new System.Drawing.Point(0, 0);
             this.menuProductos.Name = "menuProductos";
-            this.menuProductos.Size = new System.Drawing.Size(776, 28);
+            this.menuProductos.Size = new System.Drawing.Size(792, 28);
             this.menuProductos.TabIndex = 2;
             this.menuProductos.Text = "Productos";
             // 
@@ -121,7 +123,8 @@
             // 
             this.cuentaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.datosToolStripMenuItem,
-            this.saldoToolStripMenuItem});
+            this.saldoToolStripMenuItem,
+            this.cerrarSesionToolStripMenuItem});
             this.cuentaToolStripMenuItem.Name = "cuentaToolStripMenuItem";
             this.cuentaToolStripMenuItem.Size = new System.Drawing.Size(69, 24);
             this.cuentaToolStripMenuItem.Text = "Cuenta";
@@ -129,13 +132,13 @@
             // datosToolStripMenuItem
             // 
             this.datosToolStripMenuItem.Name = "datosToolStripMenuItem";
-            this.datosToolStripMenuItem.Size = new System.Drawing.Size(131, 26);
+            this.datosToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.datosToolStripMenuItem.Text = "Datos";
             // 
             // saldoToolStripMenuItem
             // 
             this.saldoToolStripMenuItem.Name = "saldoToolStripMenuItem";
-            this.saldoToolStripMenuItem.Size = new System.Drawing.Size(131, 26);
+            this.saldoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.saldoToolStripMenuItem.Text = "Saldo";
             // 
             // carritoToolStripMenuItem
@@ -144,11 +147,18 @@
             this.carritoToolStripMenuItem.Size = new System.Drawing.Size(68, 24);
             this.carritoToolStripMenuItem.Text = "Carrito";
             // 
+            // cerrarSesionToolStripMenuItem
+            // 
+            this.cerrarSesionToolStripMenuItem.Name = "cerrarSesionToolStripMenuItem";
+            this.cerrarSesionToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.cerrarSesionToolStripMenuItem.Text = "Cerrar Sesion";
+            this.cerrarSesionToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesionToolStripMenuItem_Click);
+            // 
             // formMainCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(776, 346);
+            this.ClientSize = new System.Drawing.Size(792, 364);
             this.Controls.Add(this.lblBienvenido);
             this.Controls.Add(this.menuProductos);
             this.MainMenuStrip = this.menuProductos;
@@ -177,5 +187,6 @@
         private System.Windows.Forms.ToolStripMenuItem datosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saldoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem carritoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cerrarSesionToolStripMenuItem;
     }
 }

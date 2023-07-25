@@ -34,5 +34,13 @@ namespace SistemaFerreteria.CPresentacion
         {
             lblBienvenido.Text = "Bienvenido, " + NombreCliente;
         }
+
+        private void cerrarSesionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+                this.Hide();
+                formIngreso formIngreso = new formIngreso();
+                formIngreso.Show();
+                this.Close();
+        }
     }
 }

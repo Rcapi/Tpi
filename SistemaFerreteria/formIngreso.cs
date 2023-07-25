@@ -56,25 +56,35 @@ namespace SistemaFerreteria
                                       select d;
 
                         var emp = from d in db.Empleadoes
-                                  where txtUsuario.Text.Trim() == d.Dni
-                                  select d;
+                                      where txtUsuario.Text.Trim() == d.Dni
+                                      select d;
+
                         var adm = from d in db.Administradors
-                                  where txtUsuario.Text.Trim() == d.Dni
-                                  select d;
+                                      where txtUsuario.Text.Trim() == d.Dni
+                                      select d;
 
                         if (cli.Count() > 0)
                             {
+                            this.Hide();
                             formMainCliente formMainCliente = new formMainCliente(nombre);
                             formMainCliente.Show();
+
                         }
 
                         if (emp.Count() > 0)
                         {
+                            this.Hide();
+                            formMainEmpleado formMainEmpleado = new formMainEmpleado(nombre);
+                            formMainEmpleado.Show();
+
 
                         }
 
                         if (adm.Count() > 0)
                         {
+                            this.Hide();
+                            formMainAdmin formMainAdmin = new formMainAdmin(nombre);
+                            formMainAdmin.Show();
 
                         }
 
@@ -106,8 +116,10 @@ namespace SistemaFerreteria
 
         private void linkLblRegistro_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            this.Hide();
             SeleccionarTipoUsuario seleccionarTipoUsuario = new SeleccionarTipoUsuario();
             seleccionarTipoUsuario.Show();
+
         }
     }
 }
