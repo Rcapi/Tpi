@@ -1,0 +1,6 @@
+C:\Users\matia\source\repos\SistemaFerreteria\Entidades\bin\Debug\Entidades.dll
+C:\Users\matia\source\repos\SistemaFerreteria\Entidades\bin\Debug\Entidades.pdb
+C:\Users\matia\source\repos\SistemaFerreteria\Entidades\obj\Debug\Entidades.csproj.AssemblyReference.cache
+C:\Users\matia\source\repos\SistemaFerreteria\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\matia\source\repos\SistemaFerreteria\Entidades\obj\Debug\Entidades.dll
+C:\Users\matia\source\repos\SistemaFerreteria\Entidades\obj\Debug\Entidades.pdb
