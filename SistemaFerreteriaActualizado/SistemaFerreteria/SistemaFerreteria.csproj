@@ -1,0 +1,321 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{22A6A222-6DDD-4AC2-B509-C87420501223}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SistemaFerreteria</RootNamespace>
+    <AssemblyName>SistemaFerreteria</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CDatos\Administrador.cs">
+      <DependentUpon>BD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CDatos\BD.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BD.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CDatos\BD.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CDatos\BD.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BD.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="CDatos\Cliente.cs">
+      <DependentUpon>BD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CDatos\ElementoDeSujecion.cs">
+      <DependentUpon>BD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CDatos\Empleado.cs">
+      <DependentUpon>BD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CDatos\EquipoDeSeguridad.cs">
+      <DependentUpon>BD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CDatos\Herramienta.cs">
+      <DependentUpon>BD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CDatos\HerramientaElectrica.cs">
+      <DependentUpon>BD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CDatos\HerramientaManual.cs">
+      <DependentUpon>BD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CDatos\MaterialDeConstruccion.cs">
+      <DependentUpon>BD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CDatos\Producto.cs">
+      <DependentUpon>BD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CDatos\Proveedor.cs">
+      <DependentUpon>BD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CDatos\Usuario.cs">
+      <DependentUpon>BD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CPresentacion\ABMClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CPresentacion\ABMClientes.Designer.cs">
+      <DependentUpon>ABMClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CPresentacion\ABMElementoDeSeguridad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CPresentacion\ABMElementoDeSeguridad.Designer.cs">
+      <DependentUpon>ABMElementoDeSeguridad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CPresentacion\ABMElementoDeSujecion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CPresentacion\ABMElementoDeSujecion.Designer.cs">
+      <DependentUpon>ABMElementoDeSujecion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CPresentacion\ABMHerramientaDeMano.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CPresentacion\ABMHerramientaDeMano.Designer.cs">
+      <DependentUpon>ABMHerramientaDeMano.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CPresentacion\ABMHerramientasElectricas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CPresentacion\ABMHerramientasElectricas.Designer.cs">
+      <DependentUpon>ABMHerramientasElectricas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CPresentacion\ABMMaterialesDeConstruccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CPresentacion\ABMMaterialesDeConstruccion.Designer.cs">
+      <DependentUpon>ABMMaterialesDeConstruccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CPresentacion\ModificarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CPresentacion\ModificarCliente.Designer.cs">
+      <DependentUpon>ModificarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CPresentacion\RegistroClientePorParteDeEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CPresentacion\RegistroClientePorParteDeEmpleado.Designer.cs">
+      <DependentUpon>RegistroClientePorParteDeEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CPresentacion\SeleccionaCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CPresentacion\SeleccionaCategoria.Designer.cs">
+      <DependentUpon>SeleccionaCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CPresentacion\formMainAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CPresentacion\formMainAdmin.Designer.cs">
+      <DependentUpon>formMainAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CPresentacion\formMainCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CPresentacion\formMainCliente.Designer.cs">
+      <DependentUpon>formMainCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CPresentacion\formMainEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CPresentacion\formMainEmpleado.Designer.cs">
+      <DependentUpon>formMainEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CPresentacion\RegistroCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CPresentacion\RegistroCliente.Designer.cs">
+      <DependentUpon>RegistroCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CPresentacion\RegistroEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CPresentacion\RegistroEmpleado.Designer.cs">
+      <DependentUpon>RegistroEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CPresentacion\SeleccionarTipoUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CPresentacion\SeleccionarTipoUsuario.Designer.cs">
+      <DependentUpon>SeleccionarTipoUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formIngreso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formIngreso.Designer.cs">
+      <DependentUpon>formIngreso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CPresentacion\ABMClientes.resx">
+      <DependentUpon>ABMClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CPresentacion\ABMElementoDeSeguridad.resx">
+      <DependentUpon>ABMElementoDeSeguridad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CPresentacion\ABMElementoDeSujecion.resx">
+      <DependentUpon>ABMElementoDeSujecion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CPresentacion\ABMHerramientaDeMano.resx">
+      <DependentUpon>ABMHerramientaDeMano.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CPresentacion\ABMHerramientasElectricas.resx">
+      <DependentUpon>ABMHerramientasElectricas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CPresentacion\ABMMaterialesDeConstruccion.resx">
+      <DependentUpon>ABMMaterialesDeConstruccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CPresentacion\ModificarCliente.resx">
+      <DependentUpon>ModificarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CPresentacion\RegistroClientePorParteDeEmpleado.resx">
+      <DependentUpon>RegistroClientePorParteDeEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CPresentacion\SeleccionaCategoria.resx">
+      <DependentUpon>SeleccionaCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CPresentacion\formMainAdmin.resx">
+      <DependentUpon>formMainAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CPresentacion\formMainCliente.resx">
+      <DependentUpon>formMainCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CPresentacion\formMainEmpleado.resx">
+      <DependentUpon>formMainEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CPresentacion\RegistroCliente.resx">
+      <DependentUpon>RegistroCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CPresentacion\RegistroEmpleado.resx">
+      <DependentUpon>RegistroEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CPresentacion\SeleccionarTipoUsuario.resx">
+      <DependentUpon>SeleccionarTipoUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formIngreso.resx">
+      <DependentUpon>formIngreso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EntityDeploy Include="CDatos\BD.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BD.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="CDatos\BD.edmx.diagram">
+      <DependentUpon>BD.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CNegocio\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Entidades\Entidades.csproj">
+      <Project>{cadbce50-7866-47e9-8dee-a543964e9548}</Project>
+      <Name>Entidades</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CDatos\BD.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BD.edmx</DependentUpon>
+      <LastGenOutput>BD.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="CDatos\BD.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BD.edmx</DependentUpon>
+      <LastGenOutput>BD.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>
