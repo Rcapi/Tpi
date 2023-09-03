@@ -31,7 +31,7 @@ namespace SistemaFerreteria.CPresentacion
                     {
                         string dni = dataGridViewClientes.Rows[e.RowIndex].Cells["Dni"].Value.ToString();
 
-                        ModificarCliente modificarCliente = new ModificarCliente(dni);
+                        ModificarDatos modificarCliente = new ModificarDatos(dni);
                         modificarCliente.ShowDialog();
                     }
                     else if (dataGridViewClientes.Columns[e.ColumnIndex].Name == "Eliminar")

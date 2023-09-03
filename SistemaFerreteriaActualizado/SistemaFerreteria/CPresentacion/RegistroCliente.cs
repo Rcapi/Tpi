@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entidades;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -37,7 +38,8 @@ namespace SistemaFerreteria.CPresentacion
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            try {
+            try
+            {
                 using (CDatos.FerreteriaEntities db = new CDatos.FerreteriaEntities())
                 {
                     CDatos.Usuario nuevoUsuario = new CDatos.Usuario
@@ -66,7 +68,10 @@ namespace SistemaFerreteria.CPresentacion
                         !string.IsNullOrEmpty(txtClave.Text) &&
                         !string.IsNullOrEmpty(txtConfirmaClave.Text) &&
                         txtClave.Text == txtConfirmaClave.Text)
-                    
+
+                    {
+
+                        if (!db.Usuarios.Any(usuario => usuario.Dni == nuevoUsuario.Dni))
                         {
                             db.Usuarios.Add(nuevoUsuario);
                             db.Clientes.Add(nuevoCliente);
@@ -74,61 +79,68 @@ namespace SistemaFerreteria.CPresentacion
                             MessageBox.Show("Registro guardado correctamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             this.Close();
                         }
+                        else if (db.Usuarios.Any(usuario => usuario.Dni == nuevoUsuario.Dni))
+                        {
+
+                            MessageBox.Show("Ese dni ya esta registrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        }
 
 
-                    else if (txtClave.Text != txtConfirmaClave.Text)
-                    {
+                        else if (txtClave.Text != txtConfirmaClave.Text)
+                        {
 
-                        MessageBox.Show("La clave ingresada y la confirmacion no coinciden", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("La clave ingresada y la confirmacion no coinciden", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+
+
+                        else if (string.IsNullOrEmpty(txtDni.Text))
+                        {
+
+                            MessageBox.Show("El campo Dni no puede estar vacío", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+
+                        else if (string.IsNullOrEmpty(txtNombre.Text))
+                        {
+
+                            MessageBox.Show("El campo nombre no puede estar vacío", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else if (string.IsNullOrEmpty(txtApellido.Text))
+                        {
+
+                            MessageBox.Show("El campo apellido no puede estar vacío", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else if (string.IsNullOrEmpty(txtTelefono.Text))
+                        {
+
+                            MessageBox.Show("El campo teléfono no puede estar vacío", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else if (string.IsNullOrEmpty(txtDireccion.Text))
+                        {
+
+                            MessageBox.Show("El campo dirección no puede estar vacío", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else if (string.IsNullOrEmpty(txtCiudad.Text))
+                        {
+
+                            MessageBox.Show("El campo ciudad no puede estar vacío", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else if (string.IsNullOrEmpty(txtClave.Text))
+                        {
+
+                            MessageBox.Show("El campo clave no puede estar vacío", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else
+
+                            MessageBox.Show("El campo confirmación de clave no puede estar vacío", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
 
 
-                    else if (string.IsNullOrEmpty(txtDni.Text))
-                    {
-
-                        MessageBox.Show("El campo Dni no puede estar vacío", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-
-                    else if (string.IsNullOrEmpty(txtNombre.Text))
-                    {
-
-                        MessageBox.Show("El campo nombre no puede estar vacío", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    else if (string.IsNullOrEmpty(txtApellido.Text))
-                    {
-
-                        MessageBox.Show("El campo apellido no puede estar vacío", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    else if (string.IsNullOrEmpty(txtTelefono.Text))
-                    {
-
-                        MessageBox.Show("El campo teléfono no puede estar vacío", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    else if (string.IsNullOrEmpty(txtDireccion.Text))
-                    {
-
-                        MessageBox.Show("El campo dirección no puede estar vacío", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    else if (string.IsNullOrEmpty(txtCiudad.Text))
-                    {
-
-                        MessageBox.Show("El campo ciudad no puede estar vacío", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    else if (string.IsNullOrEmpty(txtClave.Text))
-                    {
-
-                        MessageBox.Show("El campo clave no puede estar vacío", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    else
-
-                        MessageBox.Show("El campo confirmación de clave no puede estar vacío", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+            }
 
 
-                }
-             
-            
-            
+
             catch (Exception ex)
             {
                 MessageBox.Show("Error al guardar el registro: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

@@ -50,6 +50,8 @@ namespace SistemaFerreteria
                         if (lst.Count() > 0)
                         {
                             string nombre = lst.First().Nombre;
+                            string dni = lst.First().Dni;
+
                         MessageBox.Show("Bienvenido, " + nombre, "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         var cli = from d in db.Clientes
                                       where txtUsuario.Text.Trim() == d.Dni
@@ -66,7 +68,7 @@ namespace SistemaFerreteria
                         if (cli.Count() > 0)
                             {
                             this.Hide();
-                            formMainCliente formMainCliente = new formMainCliente(nombre);
+                            formMainCliente formMainCliente = new formMainCliente(nombre, dni);
                             formMainCliente.Show();
 
                         }
@@ -74,7 +76,7 @@ namespace SistemaFerreteria
                         if (emp.Count() > 0)
                         {
                             this.Hide();
-                            formMainEmpleado formMainEmpleado = new formMainEmpleado(nombre);
+                            formMainEmpleado formMainEmpleado = new formMainEmpleado(nombre, dni);
                             formMainEmpleado.Show();
 
 
@@ -83,7 +85,7 @@ namespace SistemaFerreteria
                         if (adm.Count() > 0)
                         {
                             this.Hide();
-                            formMainAdmin formMainAdmin = new formMainAdmin(nombre);
+                            formMainAdmin formMainAdmin = new formMainAdmin(nombre, dni);
                             formMainAdmin.Show();
 
                         }

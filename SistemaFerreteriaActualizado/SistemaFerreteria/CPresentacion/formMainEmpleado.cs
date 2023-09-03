@@ -13,10 +13,12 @@ namespace SistemaFerreteria.CPresentacion
     public partial class formMainEmpleado : Form
     {
         public string NombreEmpleado { get; set; }
-        public formMainEmpleado(string nombre)
+        public string DNI { get; set; }
+        public formMainEmpleado(string nombre, string dni)
         {
             InitializeComponent();
             NombreEmpleado = nombre;
+            DNI = dni;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -54,6 +56,12 @@ namespace SistemaFerreteria.CPresentacion
         {
             ABMClientes abmClientes = new ABMClientes();
             abmClientes.ShowDialog();
+        }
+
+        private void modificarDatosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DatosUsuarioEmpleado datosUsuarioEmpleado = new DatosUsuarioEmpleado(DNI);
+            datosUsuarioEmpleado.ShowDialog();
         }
     }
 }

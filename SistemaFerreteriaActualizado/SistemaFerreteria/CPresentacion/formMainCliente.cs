@@ -16,10 +16,12 @@ namespace SistemaFerreteria.CPresentacion
     public partial class formMainCliente : Form
     {
         public string NombreCliente { get; set; }
-        public formMainCliente(string nombre)
+        public string DniCliente { get; set; }
+        public formMainCliente(string nombre, string dni)
         {
             InitializeComponent();
             NombreCliente = nombre;
+            DniCliente = dni;
             MostrarProductos();
         }
 
@@ -121,6 +123,12 @@ namespace SistemaFerreteria.CPresentacion
         private void btnCarrito_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void datosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DatosUsuarioCliente datosUsuario = new DatosUsuarioCliente(DniCliente);
+            datosUsuario.Show();
         }
     }
 }

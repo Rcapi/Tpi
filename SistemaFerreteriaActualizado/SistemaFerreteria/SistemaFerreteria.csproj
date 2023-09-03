@@ -127,6 +127,12 @@
     <Compile Include="CPresentacion\ABMElementoDeSujecion.Designer.cs">
       <DependentUpon>ABMElementoDeSujecion.cs</DependentUpon>
     </Compile>
+    <Compile Include="CPresentacion\ABMEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CPresentacion\ABMEmpleados.Designer.cs">
+      <DependentUpon>ABMEmpleados.cs</DependentUpon>
+    </Compile>
     <Compile Include="CPresentacion\ABMHerramientaDeMano.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,17 +151,47 @@
     <Compile Include="CPresentacion\ABMMaterialesDeConstruccion.Designer.cs">
       <DependentUpon>ABMMaterialesDeConstruccion.cs</DependentUpon>
     </Compile>
-    <Compile Include="CPresentacion\ModificarCliente.cs">
+    <Compile Include="CPresentacion\ABMProductos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CPresentacion\ModificarCliente.Designer.cs">
-      <DependentUpon>ModificarCliente.cs</DependentUpon>
+    <Compile Include="CPresentacion\ABMProductos.Designer.cs">
+      <DependentUpon>ABMProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CPresentacion\DatosUsuarioCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CPresentacion\DatosUsuarioCliente.Designer.cs">
+      <DependentUpon>DatosUsuarioCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CPresentacion\DatosUsuarioEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CPresentacion\DatosUsuarioEmpleado.Designer.cs">
+      <DependentUpon>DatosUsuarioEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CPresentacion\DatoUsuarioAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CPresentacion\DatoUsuarioAdmin.Designer.cs">
+      <DependentUpon>DatoUsuarioAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CPresentacion\ModificarDatos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CPresentacion\ModificarDatos.Designer.cs">
+      <DependentUpon>ModificarDatos.cs</DependentUpon>
     </Compile>
     <Compile Include="CPresentacion\RegistroClientePorParteDeEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CPresentacion\RegistroClientePorParteDeEmpleado.Designer.cs">
       <DependentUpon>RegistroClientePorParteDeEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CPresentacion\RegistroEmpleadoPorAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CPresentacion\RegistroEmpleadoPorAdmin.Designer.cs">
+      <DependentUpon>RegistroEmpleadoPorAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="CPresentacion\SeleccionaCategoria.cs">
       <SubType>Form</SubType>
@@ -216,6 +252,9 @@
     <EmbeddedResource Include="CPresentacion\ABMElementoDeSujecion.resx">
       <DependentUpon>ABMElementoDeSujecion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CPresentacion\ABMEmpleados.resx">
+      <DependentUpon>ABMEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CPresentacion\ABMHerramientaDeMano.resx">
       <DependentUpon>ABMHerramientaDeMano.cs</DependentUpon>
     </EmbeddedResource>
@@ -225,11 +264,23 @@
     <EmbeddedResource Include="CPresentacion\ABMMaterialesDeConstruccion.resx">
       <DependentUpon>ABMMaterialesDeConstruccion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CPresentacion\ModificarCliente.resx">
-      <DependentUpon>ModificarCliente.cs</DependentUpon>
+    <EmbeddedResource Include="CPresentacion\DatosUsuarioCliente.resx">
+      <DependentUpon>DatosUsuarioCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CPresentacion\DatosUsuarioEmpleado.resx">
+      <DependentUpon>DatosUsuarioEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CPresentacion\DatoUsuarioAdmin.resx">
+      <DependentUpon>DatoUsuarioAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CPresentacion\ModificarDatos.resx">
+      <DependentUpon>ModificarDatos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CPresentacion\RegistroClientePorParteDeEmpleado.resx">
       <DependentUpon>RegistroClientePorParteDeEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CPresentacion\RegistroEmpleadoPorAdmin.resx">
+      <DependentUpon>RegistroEmpleadoPorAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CPresentacion\SeleccionaCategoria.resx">
       <DependentUpon>SeleccionaCategoria.cs</DependentUpon>
