@@ -103,9 +103,12 @@ CREATE TABLE HerramientaElectrica (
     FOREIGN KEY (Modelo, Codigo) REFERENCES Herramienta(Modelo, Codigo)
 );
 
+CREATE TABLE Ventas (
+    NumeroVenta INT IDENTITY(1,1) PRIMARY KEY
+);
 
 INSERT INTO Usuario (Dni, Clave, Nombre, Apellido, Email, Telefono, Direccion, Ciudad)
-VALUES ('12345678', '1234','NombreUsuario', 'ApellidoUsuario', 'correo@example.com', '1234567890', 'DirecciónUsuario', 'CiudadUsuario');
+VALUES ('12345678', '1234','NombreUsuario', 'ApellidoUsuario', 'correo@example.com', '1234567890', 'DirecciÃ³nUsuario', 'CiudadUsuario');
 
 
 INSERT INTO Cliente (Dni)
