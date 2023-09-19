@@ -1,0 +1,13 @@
+C:\Users\matia\source\repos\SistemaFerreteria\Negocio\bin\Debug\Negocio.dll
+C:\Users\matia\source\repos\SistemaFerreteria\Negocio\bin\Debug\Negocio.pdb
+C:\Users\matia\source\repos\SistemaFerreteria\Negocio\bin\Debug\CDatos.dll
+C:\Users\matia\source\repos\SistemaFerreteria\Negocio\bin\Debug\Entidades.dll
+C:\Users\matia\source\repos\SistemaFerreteria\Negocio\bin\Debug\EntityFramework.dll
+C:\Users\matia\source\repos\SistemaFerreteria\Negocio\bin\Debug\CDatos.pdb
+C:\Users\matia\source\repos\SistemaFerreteria\Negocio\bin\Debug\Entidades.pdb
+C:\Users\matia\source\repos\SistemaFerreteria\Negocio\bin\Debug\EntityFramework.xml
+C:\Users\matia\source\repos\SistemaFerreteria\Negocio\obj\Debug\Negocio.csproj.AssemblyReference.cache
+C:\Users\matia\source\repos\SistemaFerreteria\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
+C:\Users\matia\source\repos\SistemaFerreteria\Negocio\obj\Debug\Negocio.csproj.CopyComplete
+C:\Users\matia\source\repos\SistemaFerreteria\Negocio\obj\Debug\Negocio.dll
+C:\Users\matia\source\repos\SistemaFerreteria\Negocio\obj\Debug\Negocio.pdb

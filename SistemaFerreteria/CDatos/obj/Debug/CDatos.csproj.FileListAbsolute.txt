@@ -1,0 +1,13 @@
+C:\Users\matia\source\repos\SistemaFerreteria\CDatos\bin\Debug\CDatos.dll
+C:\Users\matia\source\repos\SistemaFerreteria\CDatos\bin\Debug\CDatos.pdb
+C:\Users\matia\source\repos\SistemaFerreteria\CDatos\bin\Debug\Entidades.dll
+C:\Users\matia\source\repos\SistemaFerreteria\CDatos\bin\Debug\EntityFramework.dll
+C:\Users\matia\source\repos\SistemaFerreteria\CDatos\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\matia\source\repos\SistemaFerreteria\CDatos\bin\Debug\Entidades.pdb
+C:\Users\matia\source\repos\SistemaFerreteria\CDatos\bin\Debug\EntityFramework.xml
+C:\Users\matia\source\repos\SistemaFerreteria\CDatos\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\matia\source\repos\SistemaFerreteria\CDatos\obj\Debug\CDatos.csproj.AssemblyReference.cache
+C:\Users\matia\source\repos\SistemaFerreteria\CDatos\obj\Debug\CDatos.csproj.CoreCompileInputs.cache
+C:\Users\matia\source\repos\SistemaFerreteria\CDatos\obj\Debug\CDatos.csproj.CopyComplete
+C:\Users\matia\source\repos\SistemaFerreteria\CDatos\obj\Debug\CDatos.dll
+C:\Users\matia\source\repos\SistemaFerreteria\CDatos\obj\Debug\CDatos.pdb
