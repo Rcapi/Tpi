@@ -12,23 +12,13 @@ using CDatos;
 
 namespace Presentacion
 {
-    public partial class RegistroEmpleado : Form
+    public partial class RegistroClientePorParteDeEmpleado : Form
     {
-        public RegistroEmpleado()
+        public RegistroClientePorParteDeEmpleado()
         {
             InitializeComponent();
         }
 
-
-        private void btnAtras_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            SeleccionarTipoUsuario seleccionarTipoUsuario = new SeleccionarTipoUsuario();
-            seleccionarTipoUsuario.Show();
-            this.Close();
-        }
-
-   
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
@@ -48,7 +38,7 @@ namespace Presentacion
                         Clave = txtClave.Text,
                     };
 
-                    Empleado nuevoEmpleado = new Empleado
+                    Cliente nuevoCliente = new Cliente
                     {
                         Dni = txtDni.Text,
                     };
@@ -64,22 +54,11 @@ namespace Presentacion
                         txtClave.Text == txtConfirmaClave.Text)
 
                     {
-
-                        if (!db.Usuarios.Any(usuario => usuario.Dni == nuevoUsuario.Dni))
-                        {
-                            db.Usuarios.Add(nuevoUsuario);
-                            db.Empleadoes.Add(nuevoEmpleado);
-                            db.SaveChanges();
-                            MessageBox.Show("Registro guardado correctamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            this.Close();
-                        }
-
-                        else if (db.Usuarios.Any(usuario => usuario.Dni == nuevoUsuario.Dni))
-                        {
-
-                            MessageBox.Show("Ese dni ya esta registrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                        }
+                        db.Usuarios.Add(nuevoUsuario);
+                        db.Clientes.Add(nuevoCliente);
+                        db.SaveChanges();
+                        MessageBox.Show("Registro guardado correctamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
                     }
 
 

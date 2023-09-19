@@ -1,4 +1,4 @@
-﻿namespace SistemaFerreteria.CPresentacion
+﻿namespace Presentacion
 {
     partial class formMainAdmin
     {
@@ -32,7 +32,11 @@
             this.btnClientes = new System.Windows.Forms.Button();
             this.btnEmpleados = new System.Windows.Forms.Button();
             this.btnProductos = new System.Windows.Forms.Button();
-            this.linkLblCerrarSesion = new System.Windows.Forms.LinkLabel();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.datosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.datosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.cerrarSesionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblBienvenido
@@ -54,6 +58,7 @@
             this.btnClientes.TabIndex = 1;
             this.btnClientes.Text = "Clientes";
             this.btnClientes.UseVisualStyleBackColor = true;
+            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
             // 
             // btnEmpleados
             // 
@@ -64,6 +69,7 @@
             this.btnEmpleados.TabIndex = 2;
             this.btnEmpleados.Text = "Empleados";
             this.btnEmpleados.UseVisualStyleBackColor = true;
+            this.btnEmpleados.Click += new System.EventHandler(this.btnEmpleados_Click);
             // 
             // btnProductos
             // 
@@ -74,32 +80,58 @@
             this.btnProductos.TabIndex = 3;
             this.btnProductos.Text = "Productos";
             this.btnProductos.UseVisualStyleBackColor = true;
+            this.btnProductos.Click += new System.EventHandler(this.btnProductos_Click);
             // 
-            // linkLblCerrarSesion
+            // menuStrip1
             // 
-            this.linkLblCerrarSesion.AutoSize = true;
-            this.linkLblCerrarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLblCerrarSesion.Location = new System.Drawing.Point(13, 299);
-            this.linkLblCerrarSesion.Name = "linkLblCerrarSesion";
-            this.linkLblCerrarSesion.Size = new System.Drawing.Size(111, 20);
-            this.linkLblCerrarSesion.TabIndex = 4;
-            this.linkLblCerrarSesion.TabStop = true;
-            this.linkLblCerrarSesion.Text = "Cerrar sesion";
-            this.linkLblCerrarSesion.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLblCerrarSesion_LinkClicked);
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.datosToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(850, 28);
+            this.menuStrip1.TabIndex = 5;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // datosToolStripMenuItem
+            // 
+            this.datosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.datosToolStripMenuItem1,
+            this.cerrarSesionToolStripMenuItem});
+            this.datosToolStripMenuItem.Name = "datosToolStripMenuItem";
+            this.datosToolStripMenuItem.Size = new System.Drawing.Size(69, 24);
+            this.datosToolStripMenuItem.Text = "Cuenta";
+            // 
+            // datosToolStripMenuItem1
+            // 
+            this.datosToolStripMenuItem1.Name = "datosToolStripMenuItem1";
+            this.datosToolStripMenuItem1.Size = new System.Drawing.Size(179, 26);
+            this.datosToolStripMenuItem1.Text = "Datos";
+            this.datosToolStripMenuItem1.Click += new System.EventHandler(this.datosToolStripMenuItem1_Click);
+            // 
+            // cerrarSesionToolStripMenuItem
+            // 
+            this.cerrarSesionToolStripMenuItem.Name = "cerrarSesionToolStripMenuItem";
+            this.cerrarSesionToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
+            this.cerrarSesionToolStripMenuItem.Text = "Cerrar Sesion";
+            this.cerrarSesionToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesionToolStripMenuItem_Click);
             // 
             // formMainAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(798, 327);
-            this.Controls.Add(this.linkLblCerrarSesion);
+            this.ClientSize = new System.Drawing.Size(850, 344);
             this.Controls.Add(this.btnProductos);
             this.Controls.Add(this.btnEmpleados);
             this.Controls.Add(this.btnClientes);
             this.Controls.Add(this.lblBienvenido);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "formMainAdmin";
             this.Text = "formMainAdmin";
             this.Load += new System.EventHandler(this.formMainAdmin_Load);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -111,6 +143,9 @@
         private System.Windows.Forms.Button btnClientes;
         private System.Windows.Forms.Button btnEmpleados;
         private System.Windows.Forms.Button btnProductos;
-        private System.Windows.Forms.LinkLabel linkLblCerrarSesion;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem datosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem datosToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem cerrarSesionToolStripMenuItem;
     }
 }

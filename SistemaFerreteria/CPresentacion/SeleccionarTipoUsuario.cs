@@ -7,8 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CDatos;
 
-namespace SistemaFerreteria.CPresentacion
+
+namespace Presentacion
 {
     public partial class SeleccionarTipoUsuario : Form
     {
@@ -21,14 +23,14 @@ namespace SistemaFerreteria.CPresentacion
         {
             this.Close();
             RegistroCliente registroCliente = new RegistroCliente();
-            registroCliente.Show();
+            registroCliente.ShowDialog();
         }
 
         private void btnEmpleado_Click(object sender, EventArgs e)
         {
             this.Close();
             RegistroEmpleado registroEmpleado = new RegistroEmpleado();
-            registroEmpleado.Show();
+            registroEmpleado.ShowDialog();
         }
 
         private void btnAtras_Click(object sender, EventArgs e)

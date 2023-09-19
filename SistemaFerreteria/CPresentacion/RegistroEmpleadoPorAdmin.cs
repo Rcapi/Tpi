@@ -12,23 +12,12 @@ using CDatos;
 
 namespace Presentacion
 {
-    public partial class RegistroEmpleado : Form
+    public partial class RegistroEmpleadoPorAdmin : Form
     {
-        public RegistroEmpleado()
+        public RegistroEmpleadoPorAdmin()
         {
             InitializeComponent();
         }
-
-
-        private void btnAtras_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            SeleccionarTipoUsuario seleccionarTipoUsuario = new SeleccionarTipoUsuario();
-            seleccionarTipoUsuario.Show();
-            this.Close();
-        }
-
-   
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
@@ -141,6 +130,7 @@ namespace Presentacion
                 MessageBox.Show("Error al guardar el registro: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
+        
         }
     }
 }

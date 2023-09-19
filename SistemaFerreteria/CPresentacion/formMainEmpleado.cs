@@ -7,16 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CDatos;
 
-namespace SistemaFerreteria.CPresentacion
+namespace Presentacion
 {
     public partial class formMainEmpleado : Form
     {
         public string NombreEmpleado { get; set; }
-        public formMainEmpleado(string nombre)
+        public string DNI { get; set; }
+        public formMainEmpleado(string nombre, string dni)
         {
             InitializeComponent();
             NombreEmpleado = nombre;
+            DNI = dni;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -35,6 +38,31 @@ namespace SistemaFerreteria.CPresentacion
             formIngreso formIngreso = new formIngreso();
             formIngreso.Show();
             this.Close();
+        }
+
+        private void agregarEliminarModificarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SeleccionaCategoria abmproducto = new SeleccionaCategoria();
+                abmproducto.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al abrir el formulario: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void agregarEliminarModificarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ABMClientes abmClientes = new ABMClientes();
+            abmClientes.ShowDialog();
+        }
+
+        private void modificarDatosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DatosUsuarioEmpleado datosUsuarioEmpleado = new DatosUsuarioEmpleado(DNI);
+            datosUsuarioEmpleado.ShowDialog();
         }
     }
 }

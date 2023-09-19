@@ -1,4 +1,4 @@
-﻿namespace SistemaFerreteria.CPresentacion
+﻿namespace Presentacion
 {
     partial class SeleccionarTipoUsuario
     {

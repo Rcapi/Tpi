@@ -1,4 +1,4 @@
-﻿namespace SistemaFerreteria.CPresentacion
+﻿namespace Presentacion
 {
     partial class formMainCliente
     {
@@ -30,6 +30,11 @@
         {
             this.lblBienvenido = new System.Windows.Forms.Label();
             this.menuProductos = new System.Windows.Forms.MenuStrip();
+            this.cuentaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.datosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saldoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cerrarSesionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.carritoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.elementoDeSujeccionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.equipoDeSeguridadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -37,12 +42,18 @@
             this.herramientasElectricasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.herramientasDeManoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.materialDeConstruccionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cuentaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.datosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saldoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.carritoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cerrarSesionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.flowLayoutPanelProductoCliente = new System.Windows.Forms.FlowLayoutPanel();
+            this.panelProducto = new System.Windows.Forms.Panel();
+            this.lblDescripcion = new System.Windows.Forms.Label();
+            this.lblPrecio = new System.Windows.Forms.Label();
+            this.lblNombre = new System.Windows.Forms.Label();
+            this.lblCodigo = new System.Windows.Forms.Label();
+            this.btnCarrito = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuProductos.SuspendLayout();
+            this.flowLayoutPanelProductoCliente.SuspendLayout();
+            this.panelProducto.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblBienvenido
@@ -65,9 +76,45 @@
             this.productosToolStripMenuItem});
             this.menuProductos.Location = new System.Drawing.Point(0, 0);
             this.menuProductos.Name = "menuProductos";
-            this.menuProductos.Size = new System.Drawing.Size(792, 28);
+            this.menuProductos.Size = new System.Drawing.Size(1127, 28);
             this.menuProductos.TabIndex = 2;
             this.menuProductos.Text = "Productos";
+            // 
+            // cuentaToolStripMenuItem
+            // 
+            this.cuentaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.datosToolStripMenuItem,
+            this.saldoToolStripMenuItem,
+            this.cerrarSesionToolStripMenuItem});
+            this.cuentaToolStripMenuItem.Name = "cuentaToolStripMenuItem";
+            this.cuentaToolStripMenuItem.Size = new System.Drawing.Size(69, 24);
+            this.cuentaToolStripMenuItem.Text = "Cuenta";
+            // 
+            // datosToolStripMenuItem
+            // 
+            this.datosToolStripMenuItem.Name = "datosToolStripMenuItem";
+            this.datosToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.datosToolStripMenuItem.Text = "Datos";
+            this.datosToolStripMenuItem.Click += new System.EventHandler(this.datosToolStripMenuItem_Click);
+            // 
+            // saldoToolStripMenuItem
+            // 
+            this.saldoToolStripMenuItem.Name = "saldoToolStripMenuItem";
+            this.saldoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.saldoToolStripMenuItem.Text = "Saldo";
+            // 
+            // cerrarSesionToolStripMenuItem
+            // 
+            this.cerrarSesionToolStripMenuItem.Name = "cerrarSesionToolStripMenuItem";
+            this.cerrarSesionToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.cerrarSesionToolStripMenuItem.Text = "Cerrar Sesion";
+            this.cerrarSesionToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesionToolStripMenuItem_Click);
+            // 
+            // carritoToolStripMenuItem
+            // 
+            this.carritoToolStripMenuItem.Name = "carritoToolStripMenuItem";
+            this.carritoToolStripMenuItem.Size = new System.Drawing.Size(68, 24);
+            this.carritoToolStripMenuItem.Text = "Carrito";
             // 
             // productosToolStripMenuItem
             // 
@@ -119,46 +166,88 @@
             this.materialDeConstruccionToolStripMenuItem.Size = new System.Drawing.Size(255, 26);
             this.materialDeConstruccionToolStripMenuItem.Text = "Material de construccion";
             // 
-            // cuentaToolStripMenuItem
+            // flowLayoutPanelProductoCliente
             // 
-            this.cuentaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.datosToolStripMenuItem,
-            this.saldoToolStripMenuItem,
-            this.cerrarSesionToolStripMenuItem});
-            this.cuentaToolStripMenuItem.Name = "cuentaToolStripMenuItem";
-            this.cuentaToolStripMenuItem.Size = new System.Drawing.Size(69, 24);
-            this.cuentaToolStripMenuItem.Text = "Cuenta";
+            this.flowLayoutPanelProductoCliente.Controls.Add(this.panelProducto);
+            this.flowLayoutPanelProductoCliente.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanelProductoCliente.Location = new System.Drawing.Point(13, 110);
+            this.flowLayoutPanelProductoCliente.Name = "flowLayoutPanelProductoCliente";
+            this.flowLayoutPanelProductoCliente.Size = new System.Drawing.Size(1102, 419);
+            this.flowLayoutPanelProductoCliente.TabIndex = 3;
             // 
-            // datosToolStripMenuItem
+            // panelProducto
             // 
-            this.datosToolStripMenuItem.Name = "datosToolStripMenuItem";
-            this.datosToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.datosToolStripMenuItem.Text = "Datos";
+            this.panelProducto.Controls.Add(this.lblDescripcion);
+            this.panelProducto.Controls.Add(this.lblPrecio);
+            this.panelProducto.Controls.Add(this.lblNombre);
+            this.panelProducto.Controls.Add(this.lblCodigo);
+            this.panelProducto.Controls.Add(this.btnCarrito);
+            this.panelProducto.Controls.Add(this.pictureBox1);
+            this.panelProducto.Location = new System.Drawing.Point(3, 3);
+            this.panelProducto.Name = "panelProducto";
+            this.panelProducto.Size = new System.Drawing.Size(319, 416);
+            this.panelProducto.TabIndex = 0;
             // 
-            // saldoToolStripMenuItem
+            // lblDescripcion
             // 
-            this.saldoToolStripMenuItem.Name = "saldoToolStripMenuItem";
-            this.saldoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.saldoToolStripMenuItem.Text = "Saldo";
+            this.lblDescripcion.AutoSize = true;
+            this.lblDescripcion.Location = new System.Drawing.Point(13, 145);
+            this.lblDescripcion.Name = "lblDescripcion";
+            this.lblDescripcion.Size = new System.Drawing.Size(79, 16);
+            this.lblDescripcion.TabIndex = 5;
+            this.lblDescripcion.Text = "Descripcion";
             // 
-            // carritoToolStripMenuItem
+            // lblPrecio
             // 
-            this.carritoToolStripMenuItem.Name = "carritoToolStripMenuItem";
-            this.carritoToolStripMenuItem.Size = new System.Drawing.Size(68, 24);
-            this.carritoToolStripMenuItem.Text = "Carrito";
+            this.lblPrecio.AutoSize = true;
+            this.lblPrecio.Location = new System.Drawing.Point(13, 102);
+            this.lblPrecio.Name = "lblPrecio";
+            this.lblPrecio.Size = new System.Drawing.Size(46, 16);
+            this.lblPrecio.TabIndex = 4;
+            this.lblPrecio.Text = "Precio";
             // 
-            // cerrarSesionToolStripMenuItem
+            // lblNombre
             // 
-            this.cerrarSesionToolStripMenuItem.Name = "cerrarSesionToolStripMenuItem";
-            this.cerrarSesionToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.cerrarSesionToolStripMenuItem.Text = "Cerrar Sesion";
-            this.cerrarSesionToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesionToolStripMenuItem_Click);
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Location = new System.Drawing.Point(13, 66);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(56, 16);
+            this.lblNombre.TabIndex = 3;
+            this.lblNombre.Text = "Nombre";
+            // 
+            // lblCodigo
+            // 
+            this.lblCodigo.AutoSize = true;
+            this.lblCodigo.Location = new System.Drawing.Point(13, 26);
+            this.lblCodigo.Name = "lblCodigo";
+            this.lblCodigo.Size = new System.Drawing.Size(51, 16);
+            this.lblCodigo.TabIndex = 2;
+            this.lblCodigo.Text = "Codigo";
+            // 
+            // btnCarrito
+            // 
+            this.btnCarrito.Location = new System.Drawing.Point(191, 348);
+            this.btnCarrito.Name = "btnCarrito";
+            this.btnCarrito.Size = new System.Drawing.Size(101, 44);
+            this.btnCarrito.TabIndex = 1;
+            this.btnCarrito.Text = "Agregar al carrito";
+            this.btnCarrito.UseVisualStyleBackColor = true;
+            this.btnCarrito.Click += new System.EventHandler(this.btnCarrito_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(16, 273);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(132, 119);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // formMainCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(792, 364);
+            this.ClientSize = new System.Drawing.Size(1127, 541);
+            this.Controls.Add(this.flowLayoutPanelProductoCliente);
             this.Controls.Add(this.lblBienvenido);
             this.Controls.Add(this.menuProductos);
             this.MainMenuStrip = this.menuProductos;
@@ -167,6 +256,10 @@
             this.Load += new System.EventHandler(this.formMainCliente_Load);
             this.menuProductos.ResumeLayout(false);
             this.menuProductos.PerformLayout();
+            this.flowLayoutPanelProductoCliente.ResumeLayout(false);
+            this.panelProducto.ResumeLayout(false);
+            this.panelProducto.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -188,5 +281,13 @@
         private System.Windows.Forms.ToolStripMenuItem saldoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem carritoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cerrarSesionToolStripMenuItem;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelProductoCliente;
+        private System.Windows.Forms.Panel panelProducto;
+        private System.Windows.Forms.Label lblDescripcion;
+        private System.Windows.Forms.Label lblPrecio;
+        private System.Windows.Forms.Label lblNombre;
+        private System.Windows.Forms.Label lblCodigo;
+        private System.Windows.Forms.Button btnCarrito;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

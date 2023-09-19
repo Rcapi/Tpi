@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,46 +13,47 @@ using CDatos;
 
 namespace Presentacion
 {
-    public partial class RegistroEmpleado : Form
+    public partial class ModificarDatos : Form
     {
-        public RegistroEmpleado()
+        public ModificarDatos(string dni)
         {
             InitializeComponent();
+            txtDni.Text = dni;
         }
 
-
-        private void btnAtras_Click(object sender, EventArgs e)
+        private void ModificarCliente_Load(object sender, EventArgs e)
         {
-            this.Hide();
-            SeleccionarTipoUsuario seleccionarTipoUsuario = new SeleccionarTipoUsuario();
-            seleccionarTipoUsuario.Show();
-            this.Close();
-        }
+            using (FerreteriaEntities db = new FerreteriaEntities())
+            {
+                var usuarioEncontrado = (from usuario in db.Usuarios where usuario.Dni == txtDni.Text select usuario).FirstOrDefault();
 
-   
+                txtNombre.Text = usuarioEncontrado.Nombre;
+                txtApellido.Text = usuarioEncontrado.Apellido;
+                txtMail.Text = usuarioEncontrado.Email;
+                txtTelefono.Text = usuarioEncontrado.Telefono;
+                txtDireccion.Text = usuarioEncontrado.Direccion;
+                txtCiudad.Text = usuarioEncontrado.Ciudad;
+                txtClave.Text = usuarioEncontrado.Clave;
+            }
+        }
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            try
+            using (FerreteriaEntities db = new FerreteriaEntities())
             {
-                using (FerreteriaEntities db = new FerreteriaEntities())
-                {
-                    Usuario nuevoUsuario = new Usuario
-                    {
-                        Dni = txtDni.Text,
-                        Nombre = txtNombre.Text,
-                        Apellido = txtApellido.Text,
-                        Email = txtMail.Text,
-                        Telefono = txtTelefono.Text,
-                        Direccion = txtDireccion.Text,
-                        Ciudad = txtCiudad.Text,
-                        Clave = txtClave.Text,
-                    };
 
-                    Empleado nuevoEmpleado = new Empleado
-                    {
-                        Dni = txtDni.Text,
-                    };
+                var usuarioEncontrado = (from usuario in db.Usuarios where usuario.Dni == txtDni.Text select usuario).FirstOrDefault();
+
+                if (usuarioEncontrado != null)
+                {
+                    usuarioEncontrado.Nombre = txtNombre.Text;
+                    usuarioEncontrado.Apellido = txtApellido.Text;
+                    usuarioEncontrado.Email = txtMail.Text;
+                    usuarioEncontrado.Telefono = txtTelefono.Text;
+                    usuarioEncontrado.Direccion = txtDireccion.Text;
+                    usuarioEncontrado.Ciudad = txtCiudad.Text;
+                    usuarioEncontrado.Clave = txtClave.Text;
+
 
                     if (!string.IsNullOrEmpty(txtDni.Text) &&
                         !string.IsNullOrEmpty(txtNombre.Text) &&
@@ -64,22 +66,9 @@ namespace Presentacion
                         txtClave.Text == txtConfirmaClave.Text)
 
                     {
-
-                        if (!db.Usuarios.Any(usuario => usuario.Dni == nuevoUsuario.Dni))
-                        {
-                            db.Usuarios.Add(nuevoUsuario);
-                            db.Empleadoes.Add(nuevoEmpleado);
-                            db.SaveChanges();
-                            MessageBox.Show("Registro guardado correctamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            this.Close();
-                        }
-
-                        else if (db.Usuarios.Any(usuario => usuario.Dni == nuevoUsuario.Dni))
-                        {
-
-                            MessageBox.Show("Ese dni ya esta registrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                        }
+                        db.SaveChanges();
+                        MessageBox.Show("Registro guardado correctamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
                     }
 
 
@@ -130,17 +119,10 @@ namespace Presentacion
 
                         MessageBox.Show("El campo confirmación de clave no puede estar vacío", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
-
-            }
-
-
-
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al guardar el registro: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
             }
         }
     }
 }
+    
+    
+
