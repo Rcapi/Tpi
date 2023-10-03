@@ -5,14 +5,14 @@ USE Ferreteria;
 
 CREATE TABLE Usuario (
     Dni VARCHAR(10) PRIMARY KEY,
-	Clave VARCHAR(50) NOT NULL,
+    Clave VARCHAR(50) NOT NULL,
     Nombre VARCHAR(50) NOT NULL,
     Apellido VARCHAR(50) NOT NULL,
     Email VARCHAR(100) NULL,
     Telefono VARCHAR(20) NULL,
     Direccion VARCHAR(100) NULL,
-    Ciudad VARCHAR(50) NULL
-
+    Ciudad VARCHAR(50) NULL,
+    Rol VARCHAR(20) NOT NULL 
 );
 
 
@@ -117,9 +117,46 @@ VALUES ('12345678');
 INSERT INTO Usuario (Dni, Clave, Nombre, Apellido, Email, Telefono, Direccion, Ciudad)
 VALUES ('87654321', 'asd', 'sss', 'aaa', 'mail@example.com', '1311313131', 'Direc', 'Ciu');
 
+INSERT INTO Usuario (Dni, Clave, Nombre, Apellido, Email, Telefono, Direccion, Ciudad, Rol)
+VALUES ('11111111', 'clave1', 'Juan', 'Pérez', 'juan@example.com', '555-1111', 'Calle A', 'Ciudad X', 'Cliente');
+
+INSERT INTO Usuario (Dni, Clave, Nombre, Apellido, Email, Telefono, Direccion, Ciudad, Rol)
+VALUES ('22222222', 'clave2', 'María', 'López', 'maria@example.com', '555-2222', 'Calle B', 'Ciudad Y', 'Cliente');
+
+INSERT INTO Usuario (Dni, Clave, Nombre, Apellido, Email, Telefono, Direccion, Ciudad, Rol)
+VALUES ('33333333', 'clave3', 'Pedro', 'Gómez', 'pedro@example.com', '555-3333', 'Calle C', 'Ciudad Z', 'Empleado');
+
+INSERT INTO Cliente (Dni)
+VALUES ('11111111');
+
+INSERT INTO Cliente (Dni)
+VALUES ('22222222');
+
+INSERT INTO Empleado (Dni)
+VALUES ('33333333');
 
 INSERT INTO Cliente (Dni)
 VALUES ('87654321');
+
+INSERT INTO Producto (Codigo, Nombre, Descripcion, Precio, Stock)
+VALUES ('PROD1', 'Martillo', 'Martillo de acero', 15.99, 100);
+
+INSERT INTO Producto (Codigo, Nombre, Descripcion, Precio, Stock)
+VALUES ('PROD2', 'Destornillador', 'Destornillador Phillips', 9.99, 200);
+
+--  Herramienta
+INSERT INTO Herramienta (Modelo, Codigo)
+VALUES ('HERR1', 'PROD1');
+
+INSERT INTO Herramienta (Modelo, Codigo)
+VALUES ('HERR2', 'PROD2');
+
+--  HerramientaManual
+INSERT INTO HerramientaManual (Tipo, Modelo, Codigo)
+VALUES ('Manual1', 'HERR1', 'PROD1');
+
+INSERT INTO HerramientaManual (Tipo, Modelo, Codigo)
+VALUES ('Manual2', 'HERR2', 'PROD2');
 
 select * from Usuario;
 select * from Cliente;
